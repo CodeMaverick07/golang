@@ -1,0 +1,10 @@
+go mod init <NAME OF PROJECT> 
+intialize a new Go module in the current directory with the specified module path.
+
+go run <FILE NAME>
+compile and run the specified Go source file.
+
+go build <FILE NAME>
+compile the specified Go source file into an executable binary.
+
+go build -o <OUTPUT FILE NAME> <FILE NAME>
