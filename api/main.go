@@ -15,6 +15,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	defer app.DB.Close()
 	r := routes.SetupRoutes(app)
 	var port int
 	flag.IntVar(&port, "port", 8080, "go backend server port")
