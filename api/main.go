@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"net/http"
 	"time"
-
 	"github.com/codemaverick07/api/internals/app"
 	"github.com/codemaverick07/api/internals/routes"
 )

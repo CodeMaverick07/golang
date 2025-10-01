@@ -1,0 +1,10 @@
+chi go get -u github.com/go-chi/chi/v5  # Lightweight, idiomatic and composable router
+for routing and middleware
+
+pgx go get github.com/jackc/pgx/v5  # PostgreSQL driver and toolkit
+for postgres server connection
+
+goose go get github.com/pressly/goose/v3/cmd/goose@latest # Database migration tool
+used for migrations
+
+

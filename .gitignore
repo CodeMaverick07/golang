@@ -26,3 +26,8 @@ Thumbs.db
 
 # Log files
 *.log
+
+/database 
+./database
+
+database 
