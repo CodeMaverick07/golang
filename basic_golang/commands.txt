@@ -8,3 +8,8 @@ go build <FILE NAME>
 compile the specified Go source file into an executable binary.
 
 go build -o <OUTPUT FILE NAME> <FILE NAME>
+
+goose -dir migrations postgres "postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable" up
+commands for migration
+
+export PATH=$HOME/go/bin:$PATH
