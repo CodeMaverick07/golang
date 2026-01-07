@@ -16,7 +16,7 @@ type password struct {
 var AnonymousUser = &User{}
 
 func (u *User) IsAnonymous() bool {
-	return u == AnonymousUser
+	return u == nil || u.ID == 0
 }
 
 func (p *password) Set(plainPasswordText string) error {

@@ -8,6 +8,7 @@ import (
 	"os"
 
 	"github.com/codemaverick07/api/internals/api"
+	"github.com/codemaverick07/api/internals/middleware"
 	"github.com/codemaverick07/api/internals/store"
 	"github.com/codemaverick07/api/migrations"
 )
@@ -17,6 +18,7 @@ type Application struct {
 	WorkoutHandler *api.WorkoutHandler
 	UserHandler    *api.UserHandler
 	TokenHandler   *api.TokenHandler
+	Middleware     middleware.UserMiddleware
 	DB             *sql.DB
 }
 
@@ -36,12 +38,14 @@ func NewApplication() (*Application, error) {
 	workoutHandler := api.NewWorkoutHandler(workoutStore, logger)
 	UserHandler := api.NewUserHandler(UserStore, logger)
 	TokenHandler := api.NewTokenHandler(TokenStore, UserStore, logger)
+	MiddlewareHandler := middleware.UserMiddleware{UserStore: UserStore}
 
 	app := &Application{
 		Logger:         logger,
 		WorkoutHandler: workoutHandler,
 		UserHandler:    UserHandler,
 		TokenHandler:   TokenHandler,
+		Middleware:     MiddlewareHandler,
 		DB:             pgDB,
 	}
 
